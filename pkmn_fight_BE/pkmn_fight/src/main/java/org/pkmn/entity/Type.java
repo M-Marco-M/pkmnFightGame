@@ -14,7 +14,6 @@ import java.util.List;
 public class Type {
     @Id
     @Column(name = "type_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
 
