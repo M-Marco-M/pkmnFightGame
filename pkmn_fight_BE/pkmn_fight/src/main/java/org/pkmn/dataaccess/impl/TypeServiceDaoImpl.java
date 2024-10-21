@@ -4,7 +4,9 @@ import org.pkmn.dataaccess.TypeServiceDao;
 import org.pkmn.entity.Type;
 import org.pkmn.repository.TypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TypeServiceDaoImpl implements TypeServiceDao {
 
     @Autowired
