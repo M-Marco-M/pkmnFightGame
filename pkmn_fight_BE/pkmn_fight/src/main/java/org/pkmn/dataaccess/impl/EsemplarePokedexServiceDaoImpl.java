@@ -11,10 +11,15 @@ import org.springframework.stereotype.Component;
 public class EsemplarePokedexServiceDaoImpl implements EsemplarePokedexServiceDao {
 
     @Autowired
-    PokedexRepository pokedexRepository;
+    private PokedexRepository pokedexRepository;
 
     @Override
     public EsemplarePokedex getById(int pokedexNumber) {
         return pokedexRepository.findByPokedexNumber(pokedexNumber);
+    }
+
+    @Override
+    public EsemplarePokedex getByName(String name) {
+        return pokedexRepository.findByName(name);
     }
 }

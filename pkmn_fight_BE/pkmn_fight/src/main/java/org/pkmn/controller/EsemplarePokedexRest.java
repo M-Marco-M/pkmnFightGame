@@ -12,17 +12,21 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value = "/esemplarePokemon", produces =  MediaType.APPLICATION_JSON_VALUE)
 @CrossOrigin
-@Tag(name="Gestione corsi", description="API per la gestione dei corsi")
+@Tag(name="Pokedex", description="API per la consultazione dei dati Pokedex")
 public class EsemplarePokedexRest {
 
     @Autowired
-    EsemplarePokedexService esemplarePokedexService;
+    private EsemplarePokedexService esemplarePokedexService;
 
     @Operation(summary="Restituisce un Pokémon secondo il suo numero del pokédex")
     @GetMapping("get-by-id")
-    @RequestMapping
     public EsemplarePokedex getByPokedexNumber(@Parameter(description = "Numero del pokédex del Pokémon") @RequestParam int pokedex_number){
         return  esemplarePokedexService.getById(pokedex_number);
     }
 
+    @Operation(summary = "Restituisce un Pokémon secondo il suo nome")
+    @GetMapping("get-by-name")
+    public EsemplarePokedex getByName(@Parameter(description = "Nome del pokémon") @RequestParam String name) {
+        return esemplarePokedexService.getByName(name);
+    }
 }

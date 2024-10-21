@@ -9,9 +9,10 @@ import org.springframework.stereotype.Service;
 public class EsemplarePokedexService {
 
     @Autowired
-    EsemplarePokedexServiceDaoImpl esemplarePokedexServiceDao;
+    private EsemplarePokedexServiceDaoImpl esemplarePokedexServiceDao;
 
     public EsemplarePokedex getById(int pokedex_number){
         return esemplarePokedexServiceDao.getById(pokedex_number);
     };
+    public EsemplarePokedex getByName(String name) {return esemplarePokedexServiceDao.getByName(name);};
 }
