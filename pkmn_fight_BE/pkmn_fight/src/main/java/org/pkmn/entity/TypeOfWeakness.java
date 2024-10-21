@@ -17,8 +17,8 @@ import java.util.Set;
 @AllArgsConstructor
 public class TypeOfWeakness {
     @Id
-    int id;
+    private int id;
     @Column(name="type_of_weakness")
-    int typeOfWeakness;
-    int value;
+    private int typeOfWeakness;
+    private int value;
 }

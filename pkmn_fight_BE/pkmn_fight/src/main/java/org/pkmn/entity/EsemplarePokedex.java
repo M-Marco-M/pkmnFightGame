@@ -2,9 +2,10 @@ package org.pkmn.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "pokedex")
@@ -20,4 +21,9 @@ public class EsemplarePokedex {
     private int att;
     private int def;
     private int hp;
+
+
+    @ManyToMany(mappedBy = "speciePokemon", fetch = FetchType.LAZY)
+    private List<Type> tipiPokemon;
+
 }
