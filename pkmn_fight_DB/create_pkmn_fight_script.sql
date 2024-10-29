@@ -20,8 +20,12 @@ CREATE SCHEMA IF NOT EXISTS `pkmn_fight` ;
 CREATE TABLE IF NOT EXISTS `pkmn_fight`.`move` (
   `move_id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
-  `damage` INT NOT NULL,
+  `accuracy` INT NOT NULL,
+  `power` INT NOT NULL,
+  `pp` INT NOT NULL,
+  `target` VARCHAR(45) NOT NULL,
   `type_id` INT NOT NULL,
+  
   PRIMARY KEY (`move_id`),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC) ,
   INDEX `fk_move_type1_idx` (`type_id` ASC) ,
@@ -34,7 +38,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- ----------------------------------------------------------------------------
 -- Table pkmn_fight.moveset
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pkmn_fight`.`moveset` (
+CREATE TABLE IF NOT EXISTS `pkmn_fight`.`movepool` (
   `move_id` INT NOT NULL,
   `pokedex_number` INT NOT NULL,
   PRIMARY KEY (`move_id`, `pokedex_number`),
@@ -98,7 +102,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- ----------------------------------------------------------------------------
 -- Table pkmn_fight.trainers_pkm_move
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pkmn_fight`.`trainers_pkm_move` (
+CREATE TABLE IF NOT EXISTS `pkmn_fight`.`moveset` (
   `move_id` INT NOT NULL,
   `pokedex_number` INT NOT NULL,
   `trainer_id` INT NOT NULL,
