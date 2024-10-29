@@ -20,8 +20,8 @@ public class EsemplarePokedexRest {
 
     @Operation(summary="Restituisce un Pokémon secondo il suo numero del pokédex")
     @GetMapping("get-by-id")
-    public EsemplarePokedex getByPokedexNumber(@Parameter(description = "Numero del pokédex del Pokémon") @RequestParam int pokedex_number){
-        return  esemplarePokedexService.getById(pokedex_number);
+    public EsemplarePokedex getByPokedexNumber(@Parameter(description = "Numero del pokédex del Pokémon") @RequestParam int pokedexNumber){
+        return  esemplarePokedexService.getById(pokedexNumber);
     }
 
     @Operation(summary = "Restituisce un Pokémon secondo il suo nome")

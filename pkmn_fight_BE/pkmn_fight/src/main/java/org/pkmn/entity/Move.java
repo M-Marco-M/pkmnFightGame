@@ -14,7 +14,7 @@ public class Move {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "move_id")
-    private int move_id;
+    private int id;
     private String name;
     private int damage;
 }
