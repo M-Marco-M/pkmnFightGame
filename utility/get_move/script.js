@@ -99,7 +99,7 @@ const createMoveInsertQuery = async function (moves) {
       `(${id}, "${name}", ${accuracy}, ${pp}, ${power}, ${type}, "${target}")${
         i < mosse.length - 1 ? ",\n" : ";"
       }`,
-    "INSERT INTO `move` (`move_id`, `accuracy`, `pp`,`power`,`type_id`, `target`) VALUES\n"
+    "INSERT INTO `move` (`move_id`, `name`, `accuracy`, `pp`,`power`,`type_id`, `target`) VALUES\n"
   );
 };
 
