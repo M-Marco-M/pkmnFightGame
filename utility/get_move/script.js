@@ -137,7 +137,7 @@ const createQueryInsertMovepool = async function (pkmnAndMove) {
   return arr.reduce(
     (string, [moveId, pkmnId], i) =>
       string + `(${moveId}, ${pkmnId})${i < arr.length - 1 ? ",\n" : ";"}`,
-    "INSERT INTO `movepool` (`move_id`, `pokedex_number`)\n"
+    "INSERT INTO `movepool` (`move_id`, `pokedex_number`) VALUES\n"
   );
 };
 
