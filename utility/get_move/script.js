@@ -96,9 +96,9 @@ const createMoveInsertQuery = async function (moves) {
   return mosse.reduce(
     (string, [id, name, accuracy, pp, power, type, target], i) =>
       string +
-      `(${id}, "${name}", ${accuracy}, ${pp}, ${power}, ${type}, "${target}")${
-        i < mosse.length - 1 ? ",\n" : ";"
-      }`,
+      `(${id}, "${name}", ${accuracy === null ? 0 : accuracy}, ${pp}, ${
+        power === null ? 0 : power
+      }, ${type}, "${target}")${i < mosse.length - 1 ? ",\n" : ";"}`,
     "INSERT INTO `move` (`move_id`, `name`, `accuracy`, `pp`,`power`,`type_id`, `target`) VALUES\n"
   );
 };
@@ -136,8 +136,8 @@ const createQueryInsertMovepool = async function (pkmnAndMove) {
   const arr = await pkmnAndMove;
   return arr.reduce(
     (string, [moveId, pkmnId], i) =>
-      string + `(${moveId}, ${pkmnId}) ${i < arr.length - 1 ? ",\n" : ";"}`,
-    "INSERT INTO `pokedex_has_move` (`move_id`, `pokedex_number`)\n"
+      string + `(${moveId}, ${pkmnId})${i < arr.length - 1 ? ",\n" : ";"}`,
+    "INSERT INTO `movepool` (`move_id`, `pokedex_number`)\n"
   );
 };
 
