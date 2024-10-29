@@ -17,5 +17,7 @@ It's a good challenge database-side too, specially for relations between Pokémo
 
 An important motivation is that this relations are already structured and I know them quite good since I was a Pokémon game fan in childood, so I can focus on translate the relationship on Java and MySQL tables.
 
-I also think that it will be fun ro create a game, especially a Pokémon game.
-Like I said I was a fun when I was younger.
+Also, there is are lot of resources and documentetion in the web about Pokémon, one above all PokéAPI.
+
+I also think that it will be fun to create a game, especially a Pokémon game.
+Like I said I was a fan when I was younger.

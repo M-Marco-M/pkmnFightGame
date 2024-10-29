@@ -1,6 +1,6 @@
 package org.pkmn.service;
 
-import org.pkmn.dataaccess.impl.TypeServiceDaoImpl;
+import org.pkmn.dataaccess.TypeServiceDao;
 import org.pkmn.entity.Type;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class TypeService {
 
     @Autowired
-    private TypeServiceDaoImpl typeServiceDao;
+    private TypeServiceDao typeServiceDao;
 
     public Type getById(int id) {
         return typeServiceDao.getById(id);
