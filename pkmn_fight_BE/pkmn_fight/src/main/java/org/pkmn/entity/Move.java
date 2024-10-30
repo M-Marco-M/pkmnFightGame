@@ -16,5 +16,11 @@ public class Move {
     @Column(name = "move_id")
     private int id;
     private String name;
-    private int damage;
+    private int power;
+    private int accuracy;
+    private int pp;
+    @Column(name = "type_id")
+    private int typeId;
+    @Column(name = "target")
+    private String targetType;
 }
