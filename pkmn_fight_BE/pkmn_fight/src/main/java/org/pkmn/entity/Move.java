@@ -19,8 +19,10 @@ public class Move {
     private int power;
     private int accuracy;
     private int pp;
-    @Column(name = "type_id")
-    private int typeId;
     @Column(name = "target")
     private String targetType;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "type_id")
+    private Type type;
 }

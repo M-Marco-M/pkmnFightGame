@@ -22,4 +22,7 @@ public class Type {
     @JsonIgnore
     private List<EsemplarePokedex> speciePokemon;
 
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "type_id")
+    private List<Move> moves;
 }
