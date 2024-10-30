@@ -22,7 +22,7 @@ public class Move {
     @Column(name = "target")
     private String targetType;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "type_id")
     private Type type;
 }
