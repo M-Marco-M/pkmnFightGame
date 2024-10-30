@@ -1,9 +1,12 @@
 package org.pkmn.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Table(name="move")
@@ -25,4 +28,9 @@ public class Move {
     @ManyToOne()
     @JoinColumn(name = "type_id")
     private Type type;
+
+    @ManyToMany
+    @JoinTable(name = "movepool", joinColumns = @JoinColumn (name = "move_id"), inverseJoinColumns = @JoinColumn(name = "pokedex_number"))
+    @JsonIgnore
+    private List<EsemplarePokedex> speciePokemon;
 }

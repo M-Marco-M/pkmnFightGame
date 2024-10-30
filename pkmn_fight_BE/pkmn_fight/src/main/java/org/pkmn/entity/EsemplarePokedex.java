@@ -23,7 +23,9 @@ public class EsemplarePokedex {
     private int hp;
 
 
-    @ManyToMany(mappedBy = "speciePokemon", fetch = FetchType.LAZY)
+    @ManyToMany(targetEntity = Type.class, mappedBy = "speciePokemon", fetch = FetchType.LAZY)
     private List<Type> tipiPokemon;
 
+    @ManyToMany(targetEntity = Move.class, mappedBy = "speciePokemon", fetch = FetchType.LAZY)
+    private List<Type> movepool;
 }
