@@ -3,6 +3,7 @@
 ## What is it?
 
 This game is a personal challenge to realize a web-app application from the database to the front-end view, so it's for study purpose.
+The final goal is to make a replica of pokemon-games fight section.
 
 ## Which tecnology are used?
 
@@ -21,3 +22,18 @@ Also, there is are lot of resources and documentetion in the web about Pokémon,
 
 I also think that it will be fun to create a game, especially a Pokémon game.
 Like I said I was a fan when I was younger.
+
+## Resources
+
+### ChatGPT
+
+ChatGPT was my initial choice to obtain data to insert in table on my local database
+It was okay for data like Pokémon species in Pokédex and the list of the types.
+
+### PokéAPI: https://pokeapi.co/
+
+When it comes to obtain larger amount of data and information ChatGPT failed
+so I used PokéAPI. I wrote some small scripts in JavaScript that select the datas I need
+and manipulate them to obtain the exact query format.
+
+(I'm gratefull there are so powerfull free resources by online community)
