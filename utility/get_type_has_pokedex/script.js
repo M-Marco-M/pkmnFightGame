@@ -1,4 +1,3 @@
-/*
 //Mapping DB's id and name
 const mappaIdTipi = new Map([
   ["normal", 1],
@@ -67,4 +66,3 @@ const createQuery = async function (pokemons) {
 
 //Print and then I copy and paste the query on a script
 console.log(createQuery(getAllPokemons()));
-*/

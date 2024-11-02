@@ -136,10 +136,10 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pkmn_fight`.`type_combination` (
   `att_type_id` INT NOT NULL,
-  `deftype__id` INT NOT NULL,
+  `def_type_id` INT NOT NULL,
   `type_of_weakness_weakness_id` INT NOT NULL,
-  PRIMARY KEY (`att_type_id`, `deftype__id`),
-  INDEX `fk_type_has_type_type2_idx` (`deftype__id` ASC) ,
+  PRIMARY KEY (`att_type_id`, `def_type_id`),
+  INDEX `fk_type_has_type_type2_idx` (`def_type_id` ASC) ,
   INDEX `fk_type_has_type_type1_idx` (`att_type_id` ASC) ,
   INDEX `fk_type_combination_type_of_weakness1_idx` (`type_of_weakness_weakness_id` ASC) ,
   CONSTRAINT `fk_type_combination_type_of_weakness1`
@@ -149,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `pkmn_fight`.`type_combination` (
     FOREIGN KEY (`att_type_id`)
     REFERENCES `pkmn_fight`.`type` (`type_id`),
   CONSTRAINT `fk_type_has_type_type2`
-    FOREIGN KEY (`deftype__id`)
+    FOREIGN KEY (`def_type_id`)
     REFERENCES `pkmn_fight`.`type` (`type_id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
@@ -176,9 +176,9 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- Table pkmn_fight.type_of_weakness
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pkmn_fight`.`type_of_weakness` (
-  `weakness_id` INT NOT NULL AUTO_INCREMENT,
-  `type_of_weakness` ENUM('uneffective', 'not so effective', 'effective', 'super-effective') NOT NULL,
-  `value` ENUM('0', '0.5', '1', '2') NOT NULL,
+  `weakness_id` INT NOT NULL,
+  `type_of_weakness` VARCHAR(45) NOT NULL,
+  `value` FLOAT NOT NULL,
   PRIMARY KEY (`weakness_id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
